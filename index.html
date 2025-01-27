@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iClub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">iClubCare</div>
+        <div class="navbar-links">
+            <a href="#home"></a>
+            <a href="#about-section">About</a>
+            <a href="#services-section">Services</a>
+            <a href="#quote-form">Contact</a>
+        </div>
+        <div class="navbar-contact">
+            <a href="https://wa.me/+919886004346" target="_blank">
+                <img src="whats.png"  class="whatsapp-logo">
+            
+            <span class="whatsapp-number">+919741367860</span> <!-- Replace with your number -->
+            </a>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="about-content">
+            <h1 class="about-heading"> Revive your device at your DOORSTEP with our expert SERVICE</h1>
+            <img src="main.jpg" alt="Description of image" class="about-image">
+            <div class="button-container">
+                <a href="#quote-form" class="btn btn-outline">Get Quote</a>
+                <a href="tel:+919741367860" class="btn btn-outline">Contact us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <h2 class="services-heading">Our Services</h2>
+        <div class="services-container">
+            <div class="services-slider">
+                <div class="service-item">
+                    <i class="fas fa-mobile-alt service-icon"></i>
+                    <div class="service-text">
+                        <h3>Phone Support</h3>
+                        <p>Expert fix for all smartphone brands and models.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-tablet-alt service-icon"></i>
+                    <div class="service-text">
+                        <h3>Tablet Support</h3>
+                        <p>Comprehensive care for iPads and other tablets.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-laptop service-icon"></i>
+                    <div class="service-text">
+                        <h3>Laptop Support</h3>
+                        <p>Fast and reliable service for all laptop issues.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-desktop service-icon"></i>
+                    <div class="service-text">
+                        <h3>Mac & PC Support</h3>
+                        <p>Specialized care for Apple and Windows computers.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-microchip service-icon"></i>
+                    <div class="service-text">
+                        <h3>Motherboard Service
+                        </h3>
+                        <p>Advanced diagnostics and service for motherboards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this after the Our Services section -->
+    <section class="iphone-services-section">
+        <h2 class="iphone-services-heading">Specialized iPhone Services</h2>
+        <div class="iphone-services-container">
+            <div class="iphone-services-slider">
+                <div class="iphone-service-item">
+                    <img src="phone.jpg" alt="iPhone Screen Repair" class="iphone-service-image">
+                    <div class="iphone-service-text">
+                        <h3>iPhone </h3>
+                        <p>Expert screen replacement for all iPhone models.</p>
+                    </div>
+                </div>
+                <div class="iphone-service-item">
+                    <img src="watch.jpg" alt="iPhone Battery Replacement" class="iphone-service-image">
+                    <div class="iphone-service-text">
+                        <h3>iWatch </h3>
+                        <p>Restore your iWatch with our professional service.</p>
+                    </div>
+                </div>
+                <div class="iphone-service-item">
+                    <img src="mac.jpg" alt="iPhone Water Damage Repair" class="iphone-service-image">
+                    <div class="iphone-service-text">
+                        <h3>Mac </h3>
+                        <p>Specialized treatment for Mac Books and iMacs.</p>
+
+                    </div>
+                </div>
+                <div class="iphone-service-item">
+                    <img src="ipad.jpg" alt="iPhone Software Update" class="iphone-service-image">
+                    <div class="iphone-service-text">
+                        <h3>iPad</h3>
+                        <p>Keep your iPad running smoothly with the excellent service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this after the Specialized iPhone Services section -->
+    <section id="quote-form" class="quote-form-section">
+        <h2 class="quote-form-heading">Get a Quote</h2>
+        <div class="form-container"> <!-- Added container for centering -->
+            <form id="deviceQuoteForm" class="quote-form">
+                <div class="form-group">
+                    <input type="text" id="customerName" name="customerName" required>
+                    <label for="customerName">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="customerPhone" name="customerPhone" required>
+                    <label for="customerPhone">Phone Number</label>
+                </div>
+                <div class="form-group">
+                    
+                    <div class="input-select-container">
+                        <input type="text" id="deviceBrandInput" name="deviceBrandInput"
+                            placeholder="Enter your device " required>
+                        <select name="deviceBrand" id="deviceBrand" onchange="updateBrandInput()">
+                            <option value="">Select Device</option>
+                            <option value="iPhone">iPhone Mobile</option>
+                            <option value="iPad">iPad</option>
+                            <option value="iWatch">iWatch</option>
+                            <option value="iMac">iMac</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    
+                    <div class="input-select-container">
+                        <input type="text" id="deviceModelInput" name="deviceModelInput"
+                            placeholder="Enter device model" required>
+                        <select name="deviceModel" id="deviceModel" onchange="updateModelInput()">
+                            <option value="">Select Model</option>
+
+                            <option value="iPhone 6">iPhone 6</option>
+                            <option value="iPhone 7">iPhone 7</option>
+                            <option value="iPhone 8">iPhone 8</option>
+                            <option value="iPhone SE">iPhone SE</option>
+                            <option value="iPhone X">iPhone X</option>
+                            <option value="iPhone XR">iPhone XR</option>
+                            <option value="iPhone 11">iPhone 11</option>
+                            <option value="iPhone 11 Pro">iPhone 11 Pro</option>
+                            <option value="iPhone 11 Pro Max">iPhone 11 Pro Max</option>
+                            <option value="iPhone 12">iPhone 12</option>
+                            <option value="iPhone 12 Pro">iPhone 12 Pro</option>
+                            <option value="iPhone 12 Pro Max">iPhone 12 Pro Max</option>
+                            <option value="iPhone 12 mini">iPhone 12 mini</option>
+                            <option value="iPhone 13">iPhone 13</option>
+                            <option value="iPhone 13 Pro">iPhone 13 Pro</option>
+                            <option value="iPhone 13 Pro Max">iPhone 13 Pro Max</option>
+                            <option value="iPhone 13 mini">iPhone 13 mini</option>
+                            <option value="iPhone 14">iPhone 14</option>
+                            <option value="iPhone 14 Pro">iPhone 14 Pro</option>
+                            <option value="iPhone 14 Pro Max">iPhone 14 Pro Max</option>
+                            <option value="iPhone 14 plus">iPhone 14 plus</option>
+                            <option value="iPhone 15">iPhone 15</option>
+                            <option value="iPhone 15 Pro">iPhone 15 Pro</option>
+                            <option value="iPhone 15 Pro Max">iPhone 15 Pro Max</option>
+                            <option value="iPhone 15 plus ">iPhone 15 plus</option>
+                            <option value="iPhone 16">iPhone 16</option>
+                            <option value="iPhone 16 Pro">iPhone 16 Pro</option>
+                            <option value="iPhone 16 Pro Max">iPhone 16 Pro Max</option>
+                            <option value="iPhone 16 plus">iPhone 16 plus</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea id="issueDescriptionInput" name="issueDescriptionInput" required></textarea>
+                    <label for="issueDescription">Describe the Issue</label>
+                    <select name="issueDescription" id="issueDescription" onchange="updateServiceInput()">
+                        <option value="">Select Issue</option>
+                        <option value="Screen Replacement">Screen Replacement</option>
+                        <option value="Battery Replacement">Battery Replacement</option>
+                        <option value="Water Damage Repair">Water Damage Repair</option>
+                        <option value="Back Glass">Back Glass Replacement</option>
+
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Submit Quote Request</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Thank You!</h2>
+            <p>Your quote request has been submitted successfully. We'll contact you shortly.</p>
+        </div>
+    </div>
+    <footer class="footer-section">
+        <div class="footer-content">
+            <p>&copy; 2024 iClub Care. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#https://www.instagram.com/iclub.co.in?igsh=cWE5eXNyaWN6bnd2" class="social-icon"><i class="fab fa-instagram"></i></a>
+                
+            </div>
+        </div>
+    </footer>
+   
+</body>
+
+</html>
